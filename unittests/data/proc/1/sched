@@ -1,0 +1,53 @@
+systemd (1, #threads: 1)
+-------------------------------------------------------------------
+se.exec_start                                :     391549494.646809
+se.vruntime                                  :          2524.900312
+se.sum_exec_runtime                          :          6168.513734
+se.statistics.sum_sleep_runtime              :     391543146.377227
+se.statistics.wait_start                     :             0.000000
+se.statistics.sleep_start                    :     391549494.646809
+se.statistics.block_start                    :             0.000000
+se.statistics.sleep_max                      :         51862.314922
+se.statistics.block_max                      :          4381.013553
+se.statistics.exec_max                       :            19.405697
+se.statistics.slice_max                      :             4.079684
+se.statistics.wait_max                       :            20.056644
+se.statistics.wait_sum                       :           140.252418
+se.statistics.wait_count                     :                20146
+se.statistics.iowait_sum                     :           171.770362
+se.statistics.iowait_count                   :                  284
+se.nr_migrations                             :                 4822
+se.statistics.nr_migrations_cold             :                    0
+se.statistics.nr_failed_migrations_affine    :                    0
+se.statistics.nr_failed_migrations_running   :                  925
+se.statistics.nr_failed_migrations_hot       :                   68
+se.statistics.nr_forced_migrations           :                    2
+se.statistics.nr_wakeups                     :                19643
+se.statistics.nr_wakeups_sync                :                  941
+se.statistics.nr_wakeups_migrate             :                 4755
+se.statistics.nr_wakeups_local               :                 1235
+se.statistics.nr_wakeups_remote              :                18408
+se.statistics.nr_wakeups_affine              :                15319
+se.statistics.nr_wakeups_affine_attempts     :                16111
+se.statistics.nr_wakeups_passive             :                    0
+se.statistics.nr_wakeups_idle                :                    0
+avg_atom                                     :             0.307212
+avg_per_cpu                                  :             1.279243
+nr_switches                                  :                20079
+nr_voluntary_switches                        :                19640
+nr_involuntary_switches                      :                  439
+se.load.weight                               :                 1024
+se.avg.load_sum                              :                98304
+se.avg.util_sum                              :                98304
+se.avg.load_avg                              :                    0
+se.avg.util_avg                              :                    0
+se.avg.last_update_time                      :      391549494646809
+policy                                       :                    0
+prio                                         :                  120
+clock-delta                                  :                   27
+mm->numa_scan_seq                            :                    0
+numa_pages_migrated                          :                    0
+numa_preferred_nid                           :                   -1
+total_numa_faults                            :                    0
+current_node=0, numa_group_id=0
+numa_faults node=0 task_private=0 task_shared=0 group_private=0 group_shared=0

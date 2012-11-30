@@ -1,0 +1,16 @@
+FROM python:alpine3.7
+
+RUN mkdir /usr/src/app
+
+WORKDIR /usr/src/app
+
+COPY /dist/* /usr/src/app/
+
+RUN pip3 install *.whl \
+  && rm -f *.whl
+
+# Internal port is 8080
+ENV LNXPROC_PORT=8080
+EXPOSE 8080
+
+CMD ["lnxproc"]

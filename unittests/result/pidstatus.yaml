@@ -1,0 +1,56 @@
+CapAmb: '0000000000000000'
+CapBnd: 0000003fffffffff
+CapEff: 0000003fffffffff
+CapInh: '0000000000000000'
+CapPrm: 0000003fffffffff
+Cpus_allowed: ff
+Cpus_allowed_list: 0-7
+Egid: 0
+Euid: 0
+FDSize: 256
+Fgid: 0
+Fuid: 0
+Gid: 0
+Groups: []
+HugetlbPages: 0 kB
+Mems_allowed:
+- '00000000'
+- '00000001'
+Mems_allowed_list: '0'
+NSpgid: '1'
+NSpid: '1'
+NSsid: '1'
+NStgid: '1'
+Name: systemd
+Ngid: '0'
+PPid: 0
+Pid: 1
+Seccomp: '0'
+Sgid: 0
+ShdPnd: '0000000000000000'
+SigBlk: 7be3c0fe28014a03
+SigCgt: 00000001800004ec
+SigIgn: '0000000000001000'
+SigPnd: '0000000000000000'
+SigQ: 0/62785
+State: S (sleeping)
+Suid: 0
+Tgid: 1
+Threads: 1
+TracerPid: 0
+Uid: 0
+VmData: 83844
+VmExe: 1392
+VmHWM: 6368
+VmLck: 0
+VmLib: 3664
+VmPMD: 12 kB
+VmPTE: 104
+VmPeak: 185684
+VmPin: 0
+VmRSS: 6296
+VmSize: 120092
+VmStk: 136
+VmSwap: 0
+nonvoluntary_ctxt_switches: 439
+voluntary_ctxt_switches: 19640

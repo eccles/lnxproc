@@ -1,0 +1,39 @@
+Lnxproc - available keys
+========================
+
+Main modules:
+
+    cgroups -> proc/cgroups
+    cpufreq -> sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    cpuinfo -> proc/cpuinfo
+    diskstats -> proc/diskstats
+    domainname -> proc/sys/kernel/domainname
+    hostname -> proc/sys/kernel/hostname
+    interrupts -> proc/interrupts
+    loadavg -> proc/loadavg
+    meminfo -> proc/meminfo
+    netarp -> proc/net/arp
+    netdev -> proc/net/dev
+    netrpcnfs -> proc/net/rpc/nfs
+    netrpcnfsd -> proc/net/rpc/nfsd
+    netsnmp -> proc/net/snmp
+    osrelease -> proc/sys/kernel/osrelease
+    partitions -> proc/partitions
+    schedstat -> proc/schedstat
+    stat -> proc/stat
+    uptime -> proc/uptime
+    vmstat -> proc/vmstat
+
+PID modules:
+
+    pidcmdline -> proc/%s/cmdline
+    pidenviron -> proc/%s/environ
+    pidfd -> proc/%s/fd
+    pidio -> proc/%s/io
+    pidsched -> proc/%s/sched
+    pidschedstat -> proc/%s/schedstat
+    pidsmaps -> proc/%s/smaps
+    pidstat -> proc/%s/stat
+    pidstatm -> proc/%s/statm
+    pidstatus -> proc/%s/status
+

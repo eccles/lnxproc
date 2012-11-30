@@ -1,0 +1,26 @@
+version: '3.3'
+services:
+  alpinebuilder:
+    build:
+      context: .
+      dockerfile: Dockerfile-alpinebuilder
+    command: tail -f /dev/null
+    environment:
+      - LNXPROC_LOGLEVEL
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/usr/src/app
+  alpineapi:
+    build:
+      context: .
+      dockerfile: Dockerfile-alpineapi
+    environment:
+      - LNXPROC_LOGLEVEL
+      - LNXPROC_ROOT=/hostfs
+    ports:
+      - "8080:8080"
+    privileged: true
+    volumes:
+      - /proc:/hostfs/proc:ro
+      - /sys:/hostfs/sys:rw

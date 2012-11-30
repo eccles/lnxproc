@@ -1,0 +1,48 @@
+blkio:
+  enabled: 1
+  hierarchy: 5
+  num_cgroups: 96
+cpu:
+  enabled: 1
+  hierarchy: 2
+  num_cgroups: 99
+cpuacct:
+  enabled: 1
+  hierarchy: 2
+  num_cgroups: 99
+cpuset:
+  enabled: 1
+  hierarchy: 10
+  num_cgroups: 6
+devices:
+  enabled: 1
+  hierarchy: 6
+  num_cgroups: 96
+freezer:
+  enabled: 1
+  hierarchy: 8
+  num_cgroups: 3
+hugetlb:
+  enabled: 1
+  hierarchy: 9
+  num_cgroups: 1
+memory:
+  enabled: 1
+  hierarchy: 11
+  num_cgroups: 121
+net_cls:
+  enabled: 1
+  hierarchy: 3
+  num_cgroups: 3
+net_prio:
+  enabled: 1
+  hierarchy: 3
+  num_cgroups: 3
+perf_event:
+  enabled: 1
+  hierarchy: 7
+  num_cgroups: 3
+pids:
+  enabled: 1
+  hierarchy: 4
+  num_cgroups: 95

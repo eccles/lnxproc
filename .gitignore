@@ -1,35 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
 *.py[cod]
 
-# C extensions
-*.so
-
-# Packages
-*.egg
-*.egg-info
-dist
-build
-eggs
-parts
-bin
-var
-sdist
-develop-eggs
-.installed.cfg
-lib
-lib64
-
-# Installer logs
-pip-log.txt
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
 
 # Unit test / coverage reports
+*,cover
 .coverage
-.tox
-nosetests.xml
+coverage.xml
+htmlcov/
 
-# Translations
-*.mo
+# sentinel files
+.*_container
 
-# Mr Developer
-.mr.developer.cfg
-.project
-.pydevproject
+# generated when running against dev host
+functests/data/
+functests/result/
+
+# Results from test.sh
+results
+
+# vim
+*.swp

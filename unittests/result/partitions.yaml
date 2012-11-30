@@ -1,0 +1,100 @@
+dm-0:
+  blocks: 41943040
+  major: 252
+  minor: 0
+dm-1:
+  blocks: 41943040
+  major: 252
+  minor: 1
+dm-2:
+  blocks: 18874368
+  major: 252
+  minor: 2
+dm-3:
+  blocks: 41943040
+  major: 252
+  minor: 3
+ram0:
+  blocks: 65536
+  major: 1
+  minor: 0
+ram1:
+  blocks: 65536
+  major: 1
+  minor: 1
+ram10:
+  blocks: 65536
+  major: 1
+  minor: 10
+ram11:
+  blocks: 65536
+  major: 1
+  minor: 11
+ram12:
+  blocks: 65536
+  major: 1
+  minor: 12
+ram13:
+  blocks: 65536
+  major: 1
+  minor: 13
+ram14:
+  blocks: 65536
+  major: 1
+  minor: 14
+ram15:
+  blocks: 65536
+  major: 1
+  minor: 15
+ram2:
+  blocks: 65536
+  major: 1
+  minor: 2
+ram3:
+  blocks: 65536
+  major: 1
+  minor: 3
+ram4:
+  blocks: 65536
+  major: 1
+  minor: 4
+ram5:
+  blocks: 65536
+  major: 1
+  minor: 5
+ram6:
+  blocks: 65536
+  major: 1
+  minor: 6
+ram7:
+  blocks: 65536
+  major: 1
+  minor: 7
+ram8:
+  blocks: 65536
+  major: 1
+  minor: 8
+ram9:
+  blocks: 65536
+  major: 1
+  minor: 9
+sda:
+  blocks: 500107608
+  major: 8
+  minor: 0
+sda1:
+  blocks: 204800
+  major: 8
+  minor: 1
+sda2:
+  blocks: 512000
+  major: 8
+  minor: 2
+sda3:
+  blocks: 104857600
+  major: 8
+  minor: 3
+sda4:
+  blocks: 104857600
+  major: 8
+  minor: 4

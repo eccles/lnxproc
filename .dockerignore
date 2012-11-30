@@ -1,0 +1,2 @@
+# means that we cannot use git in container
+.git

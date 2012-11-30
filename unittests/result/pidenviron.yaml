@@ -1,0 +1,9 @@
+BOOT_IMAGE: /vmlinuz-4.4.0-36-generic.efi.signed
+HOME: /
+PATH: /sbin:/usr/sbin:/bin:/usr/bin
+PWD: /
+TERM: linux
+drop_caps: ''
+init: /sbin/init
+recovery: ''
+rootmnt: /root

@@ -1,0 +1,42 @@
+192.168.122.233:
+  Device: virbr0
+  Flags: '0x2'
+  HW address: 52:54:00:20:ac:df
+  HW type: '0x1'
+  Mask: '*'
+192.168.31.1:
+  Device: wlp6s0
+  Flags: '0x2'
+  HW address: c0:3e:0f:87:83:14
+  HW type: '0x1'
+  Mask: '*'
+192.168.31.2:
+  Device: wlp6s0
+  Flags: '0x2'
+  HW address: 00:01:2e:33:5a:a8
+  HW type: '0x1'
+  Mask: '*'
+192.168.31.26:
+  Device: wlp6s0
+  Flags: '0x2'
+  HW address: d0:63:b4:00:37:72
+  HW type: '0x1'
+  Mask: '*'
+192.168.31.4:
+  Device: wlp6s0
+  Flags: '0x2'
+  HW address: f0:27:2d:a7:24:61
+  HW type: '0x1'
+  Mask: '*'
+192.168.31.5:
+  Device: wlp6s0
+  Flags: '0x2'
+  HW address: ac:3a:7a:9a:33:39
+  HW type: '0x1'
+  Mask: '*'
+192.168.31.6:
+  Device: wlp6s0
+  Flags: '0x2'
+  HW address: a4:77:33:ab:67:3e
+  HW type: '0x1'
+  Mask: '*'

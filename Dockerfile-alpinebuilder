@@ -1,0 +1,15 @@
+FROM python:alpine3.7
+
+RUN apk update \
+  && apk add -u make \
+  && rm -rf /var/cache/apk/*
+
+RUN pip3 install --upgrade pip \
+  && pip3 install \
+    coverage \
+    pycodestyle \
+    pylint \
+    wheel
+
+ADD . /usr/src/app
+WORKDIR /usr/src/app
