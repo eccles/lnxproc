@@ -4,7 +4,7 @@
 Setup script for python build system
 '''
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 
 from lnxproc import about
 
@@ -24,7 +24,7 @@ with open('README.md') as FF:
 setup(
     name=NAME,
     version=about.__version__,
-    packages=[NAME, ],
+    packages=find_packages(exclude=("unittests", )),
     license=about.__license__,
     description=about.__description__,
     long_description=DESC,
