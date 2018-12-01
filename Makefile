@@ -18,20 +18,11 @@ BUILDER := $(OSTARGET)builder
 .PHONY: all
 all:  remove_containers clean artifacts test
 
-#------------------------------------------------------------------------------
-#
-# `$ make dependencies` 
-#
-.PHONY: dependencies
-dependencies: .$(BUILDER)_container
-	./buildscripts/docker.sh dependencies.sh
-
-#------------------------------------------------------------------------------
 #
 # `$ make check` statically check the code
 #
 .PHONY: check
-check: .$(BUILDER)_container dependencies
+check: .$(BUILDER)_container
 	./buildscripts/docker.sh check.sh
 
 #------------------------------------------------------------------------------
@@ -75,14 +66,27 @@ clean: .$(BUILDER)_container
 
 #------------------------------------------------------------------------------
 #
+# `make shell` shells into builder container
+#
+.PHONY: shell
+shell: .$(BUILDER)_container
+	./buildscripts/docker-shell.sh
+
+#------------------------------------------------------------------------------
+#
 # docker dependencies
 #
 .PHONY: remove_containers
-remove_containers:
-	./buildscripts/remove_containers.sh api builder
+remove_containers: remove_api remove_builder
 
-.$(BUILDER)_container: Dockerfile-$(BUILDER) docker-compose.yaml
+remove_api:
+	./buildscripts/remove_container.sh api
+
+remove_builder:
+	./buildscripts/remove_container.sh builder
+
+.$(BUILDER)_container: requirements-dev.txt Dockerfile-$(BUILDER) docker-compose.yaml
 	./buildscripts/create_container.sh builder
 
-.$(API)_container: Dockerfile-$(API) docker-compose.yaml
+.$(API)_container: requirements.txt Dockerfile-$(API) docker-compose.yaml
 	./buildscripts/create_container.sh api

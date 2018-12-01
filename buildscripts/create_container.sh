@@ -3,8 +3,8 @@
 . ./buildscripts/log
 
 log "create_container: $*"
-. ./buildscripts/docker-check.sh
-. ./buildscripts/env-check.sh
+. ./buildscripts/docker-check
+. ./buildscripts/env-check
 
 NAME=${OSTARGET}${1}
 

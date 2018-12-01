@@ -12,6 +12,7 @@ dist/
 .coverage
 coverage.xml
 htmlcov/
+pylint/
 
 # sentinel files
 .*_container

@@ -14,4 +14,5 @@ rm -rf build/ \
        dist/ \
        *.egg-info/ \
        htmlcov/ \
+       pylint/ \
        results/

@@ -1,7 +1,10 @@
 #
+# This file is sourced
+#
 . ./buildscripts/log
 
 export BASEDIR=$(basename `pwd` )
+export CURRENT_ID=$(id -u):$(id -g)
 export PREFIX=${BASEDIR}${BUILDID}
 
 export DOCKER_COMPOSE="docker-compose -p ${PREFIX}"
@@ -9,13 +12,13 @@ export DOCKER="${DOCKER_COMPOSE} -f docker-compose.yaml"
 
 if [ -z "${OSTARGET}" ]
 then
-	OSTARGET=alpine
+	log "OSTARGET not set"
+	exit 1
 fi
 export API=${OSTARGET}api
 export BUILDER=${OSTARGET}builder
 
-export DOCKER_BUILD="${DOCKER} exec -T ${BUILDER}"
-
-export DOCKER_COPY="docker cp"
+export DOCKER_BUILD="${DOCKER} exec -T --user ${CURRENT_ID} ${BUILDER}"
+export DOCKER_SHELL="${DOCKER} exec --user ${CURRENT_ID} ${BUILDER} /bin/sh"
 
 export IMGNAME=${PREFIX}_${OSTARGET}
