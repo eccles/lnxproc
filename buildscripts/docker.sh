@@ -4,7 +4,7 @@
 #
 # #1 name of script in buildscripts directory
 #
-. ./buildscripts/docker-check.sh
-. ./buildscripts/env-check.sh
+. ./buildscripts/docker-check
+. ./buildscripts/env-check
 
 ${DOCKER_BUILD} ./buildscripts/$1

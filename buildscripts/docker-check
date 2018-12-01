@@ -1,4 +1,6 @@
 #
+# This file is sourced
+#
 . ./buildscripts/log
 which docker-compose
 if [ $? -ne 0 ]

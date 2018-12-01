@@ -11,5 +11,10 @@ RUN pip3 install --upgrade pip \
     pylint \
     wheel
 
-ADD . /usr/src/app
 WORKDIR /usr/src/app
+
+COPY requirements.txt requirements-dev.txt /tmp/
+
+RUN pip3 install -r /tmp/requirements-dev.txt \
+  && rm -f /tmp/requirements-dev.txt \
+  && rm -f /tmp/requirements.txt
