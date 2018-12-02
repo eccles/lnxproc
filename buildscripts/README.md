@@ -40,7 +40,6 @@ make unittest
 To restore a pristine environment:
 
 ```bash
-make remove_containers
 make clean
 ```
 
@@ -51,7 +50,6 @@ and proceed with further development as described above. This does **not** rever
 ```bash
 make remove_containers    # deletes the docker containers
 make clean                # returns build environment to pristine state - does **not** revert any code changes
-make dependencies         # installs the dependencies
 make check                # statically checks code
 make unittest             # runs unittests
 make artifacts            # make the artifacts - currently only packages

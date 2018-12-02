@@ -10,13 +10,12 @@ BUILDER := $(OSTARGET)builder
 #
 # To start from scratch
 #
-#     make remove_containers
 #     make clean
 #
 #------------------------------------------------------------------------------
 #
 .PHONY: all
-all:  remove_containers clean artifacts test
+all:  clean artifacts test
 
 #
 # `$ make check` statically check the code
@@ -61,8 +60,8 @@ test: wheel .$(API)_container
 # `make clean` cleans all generated files from container
 #
 .PHONY: clean
-clean: .$(BUILDER)_container
-	./buildscripts/docker.sh clean.sh
+clean: remove_containers
+	./buildscripts/clean.sh
 
 #------------------------------------------------------------------------------
 #
