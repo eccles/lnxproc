@@ -11,13 +11,6 @@ from lnxproc import about
 HERE = os.path.abspath(os.path.dirname(__file__))
 NAME = open('name', 'rt').read().strip()
 
-REQFILE = os.extsep.join(['requirements', 'txt'])
-with open(REQFILE, 'rt', ) as FF:
-    REQUIREMENTS = [
-        i.strip() for i in FF
-        if not (i.startswith('#') or i.startswith('-'))
-    ]
-
 with open('README.md') as FF:
     DESC = FF.read()
 
@@ -43,7 +36,10 @@ setup(
         'Programming Language :: Python',
         'Topic :: System :: Systems Monitoring'
     ],
-    install_requires=REQUIREMENTS,
+    install_requires=[
+        'flask',
+        'flask-restful',
+    ],
     python_requires='>=3.6',
     entry_points={
         'console_scripts': [
