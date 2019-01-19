@@ -1,7 +1,12 @@
+---
+
 version: '3.3'
 services:
   alpinebuilder:
     build:
+      args:
+        - GROUP_ID
+        - USER_ID
       context: .
       dockerfile: Dockerfile-alpinebuilder
     command: tail -f /dev/null

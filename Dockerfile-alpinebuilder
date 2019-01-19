@@ -1,5 +1,8 @@
 FROM python:alpine3.7
 
+ARG GROUP_ID
+ARG USER_ID
+
 RUN apk update \
   && apk add -u make \
   && rm -rf /var/cache/apk/*
@@ -18,3 +21,6 @@ COPY requirements.txt requirements-dev.txt /tmp/
 RUN pip3 install -r /tmp/requirements-dev.txt \
   && rm -f /tmp/requirements-dev.txt \
   && rm -f /tmp/requirements.txt
+
+RUN addgroup -g ${GROUP_ID} builder \
+  && adduser -h /usr/src/app -G builder -D -H -u ${USER_ID} builder

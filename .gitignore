@@ -26,3 +26,6 @@ results
 
 # vim
 *.swp
+
+# home directory artifacts
+.ash_history
