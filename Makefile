@@ -65,11 +65,19 @@ clean: remove_containers
 
 #------------------------------------------------------------------------------
 #
-# `make shell` shells into builder container
+# `make shell` shells into builder container as user
 #
 .PHONY: shell
 shell: .$(BUILDER)_container
 	./buildscripts/docker-shell.sh
+
+#------------------------------------------------------------------------------
+#
+# `make root_shell` shells into builder container as root
+#
+.PHONY: root_shell
+root_shell: .$(BUILDER)_container
+	./buildscripts/docker-root-shell.sh
 
 #------------------------------------------------------------------------------
 #

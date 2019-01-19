@@ -1,6 +1,6 @@
 # dependencies for installation
 #
-# Read by setup.py and buildscripts/dependencies.sh
+# Read by buildscripts/dependencies.sh
 #
 flask
 flask-restful
