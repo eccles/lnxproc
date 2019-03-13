@@ -4,7 +4,7 @@ ARG GROUP_ID
 ARG USER_ID
 
 RUN apk update \
-  && apk add -u make \
+  && apk add --no-cache --update make python3-dev  gcc build-base \
   && rm -rf /var/cache/apk/*
 
 RUN pip3 install --upgrade pip \
