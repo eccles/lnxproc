@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash -ex
 # 
 # Test installed wheel in container
 #

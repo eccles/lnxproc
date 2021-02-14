@@ -29,3 +29,7 @@ results
 
 # home directory artifacts
 .ash_history
+.bash_history
+.pylint.d/
+.python_history
+

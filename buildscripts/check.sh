@@ -9,12 +9,6 @@ then
 else
 	NAME=
 fi
-export PYLINTHOME=pylint
-if [ ! -d ${PYLINTHOME} ]
-then
-	mkdir ${PYLINTHOME}
-fi
-
 PEP8="pycodestyle --format=pylint"
 PYTHON=python3
 # ${PYTHON} -m pylint --generate-rcfile>pylintrc
