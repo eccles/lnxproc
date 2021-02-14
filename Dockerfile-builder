@@ -1,0 +1,15 @@
+FROM python:3.8-buster
+
+# always upgrade pip to get rid of annoying upgrade message
+RUN pip3 install --upgrade pip
+
+COPY requirements.txt requirements-dev.txt /tmp/
+
+RUN pip3 install -r /tmp/requirements-dev.txt \
+  && rm -f /tmp/requirements-dev.txt \
+  && rm -f /tmp/requirements.txt
+
+ENV USER=builder
+ENV HOME=/home/${USER}
+RUN mkdir -p ${HOME}
+WORKDIR ${HOME}

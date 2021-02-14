@@ -1,8 +1,7 @@
 #
-export OSTARGET ?= alpine
-
-API := $(OSTARGET)api
-BUILDER := $(OSTARGET)builder
+REPONAME := lnxproc
+BUILDER := $(REPONAME)builder
+API := $(REPONAME)api
 
 #------------------------------------------------------------------------------
 #
@@ -21,38 +20,38 @@ all:  clean artifacts test
 # `$ make check` statically check the code
 #
 .PHONY: check
-check: .$(BUILDER)_container
-	./buildscripts/docker.sh check.sh
+check:
+	./buildscripts/builder.sh buildscripts/check.sh
 
 #------------------------------------------------------------------------------
 #
 # `$ make unittest` execute any tests
 #
 .PHONY: unittest
-unittest: .$(BUILDER)_container check
-	./buildscripts/docker.sh unittest.sh
+unittest: check
+	./buildscripts/builder.sh buildscripts/unittest.sh
 
 #------------------------------------------------------------------------------
 #
 # `$ make wheel` makes wheel
 #
 .PHONY: wheel
-wheel: .$(BUILDER)_container unittest
-	./buildscripts/docker.sh wheel.sh
+wheel:  unittest
+	./buildscripts/builder.sh buildscripts/wheel.sh
 
 #------------------------------------------------------------------------------
 #
 # make artifacts
 #
 .PHONY: artifacts
-artifacts: .$(BUILDER)_container wheel
+artifacts: wheel
 
 #------------------------------------------------------------------------------
 #
 # `$ make test` check that it works as installed
 #
 .PHONY: test
-test: wheel .$(API)_container
+test: wheel
 	./buildscripts/test.sh
 
 #------------------------------------------------------------------------------
@@ -60,7 +59,7 @@ test: wheel .$(API)_container
 # `make clean` cleans all generated files from container
 #
 .PHONY: clean
-clean: remove_containers
+clean:
 	./buildscripts/clean.sh
 
 #------------------------------------------------------------------------------
@@ -68,32 +67,17 @@ clean: remove_containers
 # `make shell` shells into builder container as user
 #
 .PHONY: shell
-shell: .$(BUILDER)_container
-	./buildscripts/docker-shell.sh
-
-#------------------------------------------------------------------------------
-#
-# `make root_shell` shells into builder container as root
-#
-.PHONY: root_shell
-root_shell: .$(BUILDER)_container
-	./buildscripts/docker-root-shell.sh
+shell:
+	./buildscripts/builder.sh /bin/bash
 
 #------------------------------------------------------------------------------
 #
 # docker dependencies
 #
-.PHONY: remove_containers
-remove_containers: remove_api remove_builder
+.PHONY: builder
+builder: requirements-dev.txt Dockerfile-builder
+	docker build -f Dockerfile-builder -t $(BUILDER) .
 
-remove_api:
-	./buildscripts/remove_container.sh api
-
-remove_builder:
-	./buildscripts/remove_container.sh builder
-
-.$(BUILDER)_container: requirements-dev.txt Dockerfile-$(BUILDER) docker-compose.yaml
-	./buildscripts/create_container.sh builder
-
-.$(API)_container: requirements.txt Dockerfile-$(API) docker-compose.yaml
-	./buildscripts/create_container.sh api
+.PHONY: api
+api: requirements.txt Dockerfile-api
+	docker build -f Dockerfile-api -t $(API) .

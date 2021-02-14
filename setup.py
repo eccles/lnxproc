@@ -8,6 +8,7 @@ from setuptools import setup, find_packages
 
 from lnxproc import about
 
+REPO_URL = 'https://github.com/eccles/'
 HERE = os.path.abspath(os.path.dirname(__file__))
 NAME = open('name', 'rt').read().strip()
 
@@ -21,8 +22,8 @@ setup(
     license=about.__license__,
     description=about.__description__,
     long_description=DESC,
-    url='https://github.com/eccles/' + NAME + '/',
-    download_url='https://github.com/eccles/' + NAME + '/dist/',
+    url=REPO_URL + NAME + '/',
+    download_url=REPO_URL + NAME + '/dist/',
     author=about.__author__,
     author_email=about.__author_email__,
     platforms=['linux', ],
@@ -37,10 +38,10 @@ setup(
         'Topic :: System :: Systems Monitoring'
     ],
     install_requires=[
-        'flask',
-        'flask-restful',
+        'flask==1.1.2',
+        'flask-restful==0.3.8',
     ],
-    python_requires='>=3.6',
+    python_requires='>=3.8',
     entry_points={
         'console_scripts': [
             'lnxproc = lnxproc:entry.main',
