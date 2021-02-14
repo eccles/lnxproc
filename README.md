@@ -99,7 +99,6 @@
         - curl
         - make
         - docker-ce
-        - docker-compose 
 
     To make:
 
