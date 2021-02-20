@@ -52,6 +52,8 @@ make clean                # returns build environment to pristine state - does *
 make check                # statically checks code
 make unittest             # runs unittests
 make wheel                # makes wheel package for PyPi
+make api                  # makes api container
+make test                 # executes functional tests
 ```
 
 The make command will ensure that all required targets are made in order. i.e. 'make wheel' will also execute
@@ -63,9 +65,11 @@ It is more efficient to execute the corresponding scripts durectly but less safe
 
 ```bash
 ./buildscripts/clean.sh
-./buildscripts/create_builder.sh
+./buildscripts/create_container.sh builder
 ./buildscripts/unittest.sh
 ./buildscripts/wheel.sh
+./buildscripts/create_container.sh api
+./buildscripts/test.sh
 ```
 
 ### Debugging

@@ -76,6 +76,3 @@ do
 		-H "Content-Type: application/json" \
 		$URL/pid/$PPID/$r
 done
-
-# show logs output
-docker-compose logs

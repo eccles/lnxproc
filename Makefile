@@ -36,17 +36,10 @@ wheel:  unittest
 
 #------------------------------------------------------------------------------
 #
-# make artifacts
-#
-.PHONY: artifacts
-artifacts: wheel
-
-#------------------------------------------------------------------------------
-#
 # `$ make test` check that it works as installed
 #
 .PHONY: test
-test: wheel
+test: api
 	./buildscripts/test.sh
 
 #------------------------------------------------------------------------------
@@ -72,5 +65,5 @@ shell:
 builder: requirements.txt requirements-dev.txt Dockerfile-builder
 	./buildscripts/create_container.sh builder
 
-api: requirements.txt Dockerfile-api
+api: wheel Dockerfile-api
 	./buildscripts/create_container.sh api
