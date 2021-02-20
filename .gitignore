@@ -32,6 +32,8 @@ results
 # home directory artifacts
 .ash_history
 .bash_history
+.cache
+.local
 .pylint.d/
 .python_history
 
