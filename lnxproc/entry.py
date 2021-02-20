@@ -20,7 +20,7 @@ def main():
     Setup logger and read command line
     """
     set_logger(
-        os.environ.get('LNXPROC_LOGLEVEL', 'CRITICAL'),
+        os.environ.get('LNXPROC_LOGLEVEL', 'DEBUG'),
     )
 
     LOGGER.debug("Start V%s", about.__version__)

@@ -9,7 +9,7 @@ set -x
 
 start_api() {
 	log "Start api"
-	API_ID=`docker run --rm -p 8080:8080 -d ${NAME}api`
+	API_ID=`docker run --rm -p 127.0.0.1:8080:8080 -e LNXPROC_PORT=8080 -d ${NAME}api`
 	echo "${API_ID}" > api_id
 }
 stop_api() {

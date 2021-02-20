@@ -10,6 +10,7 @@ log "Execute $@ in builder"
 docker run \
     --rm \
     -it \
+    -p 127.0.0.1:8080:8080 \
     -v $(pwd):/home/builder \
     -u $(id -u):$(id -g) \
     ${NAME}builder \
