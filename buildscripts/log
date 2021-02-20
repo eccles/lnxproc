@@ -1,7 +1,8 @@
+# 
+# Provides a logging function for buildscripts
 #
-# common methods
+# this file is sourced and is not executable
 #
-# this file should be sourced and not executed
 log() {
-    echo "`date`: $* ..." >&2
+	echo "`date`:$* ..."
 }

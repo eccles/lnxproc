@@ -1,0 +1,11 @@
+# 
+# Prevents execution inside builder container
+#
+# this file is sourced and is not executable
+#
+. ./buildscripts/log
+if [ "$USER" = "builder" ]
+then
+	log "Must not execute $0 inside builder container"
+	exit 0
+fi

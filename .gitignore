@@ -15,7 +15,8 @@ htmlcov/
 pylint/
 
 # sentinel files
-.*_container
+builder
+api
 
 # generated when running against dev host
 functests/data/
