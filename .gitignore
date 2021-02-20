@@ -15,7 +15,9 @@ htmlcov/
 pylint/
 
 # sentinel files
-.*_container
+builder
+api
+api_id
 
 # generated when running against dev host
 functests/data/
@@ -30,6 +32,8 @@ results
 # home directory artifacts
 .ash_history
 .bash_history
+.cache
+.local
 .pylint.d/
 .python_history
 

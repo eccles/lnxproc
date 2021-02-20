@@ -3,18 +3,9 @@
 # test packages - generic script
 #
 
-if [ -s name ]
-then
-	NAME=$( cat name )
-else
-	NAME=
-fi
-if [ -n "${NAME}" ]
-then
-	SOURCES="${NAME}"
-else
-	SOURCES=
-fi
+. ./buildscripts/log
+. ./buildscripts/inside_builder
+. ./buildscripts/name
 
 PYTHON=python3
 COVERAGE="coverage"
@@ -23,7 +14,7 @@ then
 	TESTRUNNER=unittest
 fi
 
-${COVERAGE} run --branch --source ${SOURCES} -m ${TESTRUNNER} discover -v
+${COVERAGE} run --branch --source ${NAME} -m ${TESTRUNNER} discover -v
 ${COVERAGE} annotate
 ${COVERAGE} html
 ${COVERAGE} xml

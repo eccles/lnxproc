@@ -1,0 +1,12 @@
+# 
+# Resolves the name of the repo
+#
+# this file is sourced and is not executable
+#
+. ./buildscripts/log
+if [ ! -s name ]
+then
+	log "file 'name' not found"
+	exit 1
+fi
+NAME=$( cat name )

@@ -3,17 +3,16 @@
 # Statically analyse code
 #
 
-if [ -s name ]
-then
-	NAME=$( cat name )
-else
-	NAME=
-fi
+. ./buildscripts/log
+. ./buildscripts/inside_builder
+. ./buildscripts/name
+
 PEP8="pycodestyle --format=pylint"
 PYTHON=python3
-# ${PYTHON} -m pylint --generate-rcfile>pylintrc
 PYLINT="${PYTHON} -m pylint --rcfile=pylintrc"
 
 PYS=$( find -maxdepth 1 -name '*.py' )
+log "Executing ${PEP8}"
 ${PEP8} ${PYS} ${NAME} unittests
+log "Executing ${PYLINT}"
 ${PYLINT} ${PYS} ${NAME} unittests

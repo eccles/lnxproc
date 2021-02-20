@@ -1,11 +1,6 @@
-#
-REPONAME := lnxproc
-BUILDER := $(REPONAME)builder
-API := $(REPONAME)api
-
 #------------------------------------------------------------------------------
 #
-# Requires docker-ce and docker-compose
+# Requires docker-ce
 #
 # To start from scratch
 #
@@ -14,14 +9,14 @@ API := $(REPONAME)api
 #------------------------------------------------------------------------------
 #
 .PHONY: all
-all:  clean artifacts test
+all:  clean test
 
 #
 # `$ make check` statically check the code
 #
 .PHONY: check
 check:
-	./buildscripts/builder.sh buildscripts/check.sh
+	./buildscripts/check.sh
 
 #------------------------------------------------------------------------------
 #
@@ -29,7 +24,7 @@ check:
 #
 .PHONY: unittest
 unittest: check
-	./buildscripts/builder.sh buildscripts/unittest.sh
+	./buildscripts/unittest.sh
 
 #------------------------------------------------------------------------------
 #
@@ -37,21 +32,21 @@ unittest: check
 #
 .PHONY: wheel
 wheel:  unittest
-	./buildscripts/builder.sh buildscripts/wheel.sh
+	./buildscripts/wheel.sh
 
 #------------------------------------------------------------------------------
 #
-# make artifacts
+# `$ make api_id` starts the api container
 #
-.PHONY: artifacts
-artifacts: wheel
+api_id: api
+	./buildscripts/api.sh start
 
 #------------------------------------------------------------------------------
 #
 # `$ make test` check that it works as installed
 #
 .PHONY: test
-test: wheel
+test: api_id
 	./buildscripts/test.sh
 
 #------------------------------------------------------------------------------
@@ -74,10 +69,8 @@ shell:
 #
 # docker dependencies
 #
-.PHONY: builder
-builder: requirements-dev.txt Dockerfile-builder
-	docker build -f Dockerfile-builder -t $(BUILDER) .
+builder: requirements.txt requirements-dev.txt Dockerfile-builder
+	./buildscripts/create_container.sh builder
 
-.PHONY: api
-api: requirements.txt Dockerfile-api
-	docker build -f Dockerfile-api -t $(API) .
+api: wheel Dockerfile-api
+	./buildscripts/create_container.sh api
