@@ -3,6 +3,8 @@
 # returns python3 repo to pristine state
 #
 
+./buildscripts/api.sh stop
+
 find -name '*,cover' -delete
 find -depth -name '__pycache__' -type d -exec rm -rf {} \; -print
 find -name '.coverage' -delete
@@ -16,9 +18,11 @@ rm -f api api_id \
       .python_history
 
 rm -rf build/ \
+       .cache/ \
        dist/ \
        *.egg-info/ \
        htmlcov/ \
+       .local/ \
        .pylint.d/ \
        results/
 

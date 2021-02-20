@@ -1,16 +1,26 @@
 #!/bin/sh -e
 #
-# Start api container
+# Start and stop api container
 
-set -x
 . ./buildscripts/log
 . ./buildscripts/not_inside_builder
 . ./buildscripts/name
 
 start_api() {
-	log "Start api"
-	API_ID=`docker run --rm -p 127.0.0.1:8080:8080 -e LNXPROC_PORT=8080 -d ${NAME}api`
-	echo "${API_ID}" > api_id
+	if [ ! -s api_id ]
+	then
+		log "Start api"
+		API_ID=`docker run \
+                       --rm \
+                       -p 127.0.0.1:8080:8080 \
+                       -e LNXPROC_PORT=8080 \
+                       -d \
+                       -v /proc:/proc \
+                       -v /sys:/sys \
+                       ${NAME}api`
+		echo "${API_ID}" > api_id
+        sleep 2
+	fi
 }
 stop_api() {
 	if [ -s api_id ]

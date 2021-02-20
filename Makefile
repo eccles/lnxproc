@@ -9,7 +9,7 @@
 #------------------------------------------------------------------------------
 #
 .PHONY: all
-all:  clean artifacts test
+all:  clean test
 
 #
 # `$ make check` statically check the code
