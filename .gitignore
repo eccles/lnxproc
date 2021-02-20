@@ -17,6 +17,7 @@ pylint/
 # sentinel files
 builder
 api
+api_id
 
 # generated when running against dev host
 functests/data/

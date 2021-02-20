@@ -69,7 +69,9 @@ It is more efficient to execute the corresponding scripts durectly but less safe
 ./buildscripts/unittest.sh
 ./buildscripts/wheel.sh
 ./buildscripts/create_container.sh api
+./buildscripts/api.sh start
 ./buildscripts/test.sh
+./buildscripts/api.sh stop
 ```
 
 ### Debugging

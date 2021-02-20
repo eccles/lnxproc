@@ -8,7 +8,7 @@ find -depth -name '__pycache__' -type d -exec rm -rf {} \; -print
 find -name '.coverage' -delete
 find -name '*.py[cod]' -delete
 
-rm -f api \
+rm -f api api_id \
       .ash_history \
       .bash_history \
       builder \

@@ -36,10 +36,17 @@ wheel:  unittest
 
 #------------------------------------------------------------------------------
 #
+# `$ make api_id` starts the api container
+#
+api_id: api
+	./buildscripts/api.sh start
+
+#------------------------------------------------------------------------------
+#
 # `$ make test` check that it works as installed
 #
 .PHONY: test
-test: api
+test: api_id
 	./buildscripts/test.sh
 
 #------------------------------------------------------------------------------
