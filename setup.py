@@ -38,7 +38,7 @@ setup(
         'Topic :: System :: Systems Monitoring'
     ],
     install_requires=[
-        'flask==1.1.2',
+        'flask==2.3.2',
         'flask-restful==0.3.8',
     ],
     python_requires='>=3.8',
